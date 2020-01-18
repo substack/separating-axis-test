@@ -1,12 +1,7 @@
 var dot = require('gl-vec2/dot')
-var cross = require('gl-vec2/cross')
-var length = require('gl-vec2/length')
-
-var EPSILON = 0.00001
 var minOverlap = Infinity
 
-module.exports = function sat2d (out, A, B, epsilon) {
-  if (epsilon === undefined) epsilon = EPSILON
+module.exports = function sat2d (out, A, B) {
   minOverlap = Infinity
   for (var i = 0; i < A.separatingAxes.length; i++) {
     if (!check(out, A, B, A.separatingAxes[i])) return null

@@ -109,7 +109,7 @@ var sat3d = require('separating-axis-test/3d')
 var {sat2d,sat3d} = require('separating-axis-test')
 ```
 
-## sat2d(out, A, B, epsilon=0.00001)
+## sat2d(out, A, B)
 
 Calculate the intersection of convex polygons `A` and `B` in 2d, storing the
 minimum translation vector in `out` if the shapes intersect.
