@@ -132,6 +132,9 @@ Each polytope `A` and `B` must have these fields:
 * `positions` - an array of `[x,y,z]` arrays which describe the convex hull
 * `separatingAxes` - an array of (normalized) `[x,y,z]` normals to test
 
+If there is no intersection, this function returns null.
+Otherwise, it returns the minimum translation vector `out`.
+
 # install
 
 ```
