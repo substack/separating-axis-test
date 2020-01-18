@@ -2,6 +2,7 @@
   "name": "separating-axis-test",
   "version": "1.0.0",
   "description": "test for the intersection of convex polytopes in 2d or 3d, computing the minimum translation vector",
+  "main": "index.js",
   "keywords": [
     "hyperplane",
     "separating axis theorem",
@@ -15,5 +16,8 @@
   },
   "devDependencies": {
     "tape": "^4.13.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
   }
 }
