@@ -1,6 +1,6 @@
 {
   "name": "separating-axis-test",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "test for the intersection of convex polytopes in 2d or 3d, computing the minimum translation vector",
   "main": "index.js",
   "keywords": [
