@@ -91,8 +91,8 @@ test('axis-aligned boxes 3d', function (t) {
 })
 
 test('oriented boxes 3d', function (t) {
-  var sq33 = Math.sqrt(3)/3
-  t.deepEqual(sat3d(
+  var sq22 = Math.sqrt(2)/2
+  t.deepEqual(roundv3(1000,sat3d(
     [],
     {
       separatingAxes: [[0,0,1],[0,1,0],[1,0,0]],
@@ -102,13 +102,13 @@ test('oriented boxes 3d', function (t) {
       ]
     },
     {
-      separatingAxes: [[sq33,sq33,sq33],[-sq33,sq33,sq33],[0,0,1]],
+      separatingAxes: [[sq22,sq22,0],[-sq22,sq22,0],[0,0,1]],
       positions: [
         [-0.3,0.5,0],[+0.2,0.0,0],[-0.3,-0.5,0],[-0.8,0.0,0],
         [-0.3,0.5,1],[+0.2,0.0,1],[-0.3,-0.5,1],[-0.8,0.0,1]
       ]
     }
-  ), [0.2,0,0])
+  )), [0.1,0.1,0])
   t.notOk(sat3d(
     [],
     {
@@ -119,7 +119,7 @@ test('oriented boxes 3d', function (t) {
       ]
     },
     {
-      separatingAxes: [[sq33,sq33,sq33],[-sq33,sq33,sq33],[0,0,1]],
+      separatingAxes: [[sq22,sq22,0],[-sq22,sq22,0],[0,0,1]],
       positions: [
         [-0.3,0.25,0],[+0.2,-0.25,0],[-0.3,-0.75,0],[-0.8,-0.25,0],
         [-0.3,0.25,1],[+0.2,-0.25,1],[-0.3,-0.75,1],[-0.8,-0.25,1]
@@ -128,3 +128,10 @@ test('oriented boxes 3d', function (t) {
   ))
   t.end()
 })
+
+function roundv3 (n, v) {
+  v[0] = Math.round(v[0]*n)/n
+  v[1] = Math.round(v[1]*n)/n
+  v[2] = Math.round(v[2]*n)/n
+  return v
+}

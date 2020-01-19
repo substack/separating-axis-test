@@ -50,7 +50,7 @@ test('axis-aligned boxes 2d', function (t) {
 })
 
 test('oriented boxes 2d', function (t) {
-  var sq2 = Math.sqrt(2)
+  var sq22 = Math.sqrt(2)/2
   t.deepEqual(roundv2(1000,sat2d(
     [],
     {
@@ -58,7 +58,7 @@ test('oriented boxes 2d', function (t) {
       positions: [[0,1],[1,1],[1,0],[0,0]]
     },
     {
-      separatingAxes:[[sq2/2,sq2/2],[-sq2/2,sq2/2]],
+      separatingAxes:[[sq22,sq22],[-sq22,sq22]],
       positions: [[-0.3,0.5],[+0.2,0.0],[-0.3,-0.5],[-0.8,0.0]]
     }
   )),[0.1,0.1])
@@ -69,7 +69,7 @@ test('oriented boxes 2d', function (t) {
       positions: [[0,1],[1,1],[1,0],[0,0]]
     },
     {
-      separatingAxes:[[sq2/2,sq2/2],[-sq2/2,sq2/2]],
+      separatingAxes:[[sq22,sq22],[-sq22,sq22]],
       positions: [[-0.3,0.25],[+0.2,-0.25],[-0.3,-0.75],[-0.8,-0.25]]
     }
   ))
