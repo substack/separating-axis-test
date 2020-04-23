@@ -14,6 +14,8 @@ If an intersection exists, return the minimum translation vector.
 The examples below use axis-aligned boxes, but oriented boxes or any other
 convex polytope will work too.
 
+The examples below show nested coordinates but flat arrays work too.
+
 ## 2d example
 
 2d example with two axis-aligned boxes:
@@ -116,8 +118,11 @@ minimum translation vector in `out` if the shapes intersect.
 
 Each polygon `A` and `B` must have these fields:
 
-* `positions` - an array of `[x,y]` arrays which describe the convex hull
-* `separatingAxes` - an array of (normalized) `[x,y]` normals to test
+* `positions` - an array of coordinates which describe the convex hull
+* `separatingAxes` - an array of (normalized) axis normals to test
+
+Coordinates and normals may be specified as nested (`[[x0,y0],[x1,y1],...]`) or
+flat (`[x0,y0,x1,y1,...]`).
 
 If there is no intersection, this function returns null.
 Otherwise, it returns the minimum translation vector `out`.
@@ -129,8 +134,11 @@ minimum translation vector in `out` if the shapes intersect.
 
 Each polytope `A` and `B` must have these fields:
 
-* `positions` - an array of `[x,y,z]` arrays which describe the convex hull
-* `separatingAxes` - an array of (normalized) `[x,y,z]` normals to test
+* `positions` - an array of coordinates which describe the convex hull
+* `separatingAxes` - an array of (normalized) axis normals to test
+
+Coordinates and normals may be specified as nested
+(`[[x0,y0,z0],[x1,y1,z1],...]`) or flat (`[x0,y0,z0,x1,y1,z1,...]`).
 
 If there is no intersection, this function returns null.
 Otherwise, it returns the minimum translation vector `out`.
